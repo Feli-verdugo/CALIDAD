@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ONG Life & Sustainability</title>
+    <link rel="stylesheet" href="estilo-formulario.css">
+</head>
+
+<body class="bodyret">
+    <h2>Datos de retiro</h2>
+
+    <p><strong>Tipo de Residuo:</strong> <span id="tipo-residuo"></span></p>
+    <p><strong>Cantidad:</strong> <span id="cantidad"></span> metros cúbicos</p>
+    <p><strong>Precio:</strong> $<span id="precio"></span></p>
+    <p><strong>Comuna:</strong> <span id="comuna"></span></p>
+    <p><strong>Calle:</strong> <span id="calle"></span></p>
+    <p><strong>Fecha de Retiro:</strong> <span id="fecha"></span></p>
+
+    <script>
+        document.getElementById('tipo-residuo').textContent = localStorage.getItem('tipoResiduo');
+        document.getElementById('cantidad').textContent = localStorage.getItem('cantidad');
+        document.getElementById('comuna').textContent = localStorage.getItem('comuna');
+        document.getElementById('calle').textContent = localStorage.getItem('calle');
+        document.getElementById('fecha').textContent = localStorage.getItem('fecha');
+        document.getElementById('precio').textContent = localStorage.getItem('precio');
+    </script>
+</body>
+
+</html>

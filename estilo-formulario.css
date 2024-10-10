@@ -7,6 +7,10 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+.bodyret { /* formulario retiro*/
+    font-family: Arial, sans-serif;
+}
+
 .request-form form {
     display: flex;
     flex-direction: column;

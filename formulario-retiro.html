@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="estilo-formulario.css">
 </head>
 
-<body>
+<body class="bodyret">
     <section class="request-form">
         <h2>Solicitar Retiro de Residuos</h2>
 
@@ -21,15 +21,38 @@
             </select>
 
             <label for="cantidad">Cantidad (en metros cúbicos):</label>
-            <input type="number" id="cantidad" name="cantidad" required>
+            <input type="number" id="cantidad" name="cantidad" required oninput="verificarCantidad()">
+            <p id="advertencia" style="color: red; display: none;">La cantidad supera los 2 metros cúbicos. por lo que requerira de un pago</p>
 
-            <label for="direccion">Dirección de Retiro:</label>
-            <input type="text" id="direccion" name="direccion" required>
+            <script>
+            function verificarCantidad() {
+                var cantidad = document.getElementById('cantidad').value;
+                var advertencia = document.getElementById('advertencia');
 
+                if (cantidad > 2) {
+                    advertencia.style.display = 'block';
+                } else {
+                    advertencia.style.display = 'none';
+                }
+            }
+            </script>
+
+
+            <label for="comuna">Comuna:</label>
+            <select id="comuna" name="comuna">
+                <option value="alhue">Alhué</option>
+                <option value="curacavi">Curacaví</option>
+                <option value="maria-pinto">María Pinto</option>
+                <option value="melipilla">Melipilla</option>
+                <option value="san-pedro">San Pedro</option>
+            </select>
+            <label for="direccion">Calle:</label>
+            <input type="text" id="calle" name="calle" required>
+            
             <label for="fecha">Fecha de Retiro:</label>
             <input type="date" id="fecha" name="fecha" required>
 
-            <button type="submit">Solicitar Retiro</button>
+            <button type="submit" id="solicitar">Solicitar Retiro</button>
         </form>
 
         <button id="back-button">Volver al Inicio</button> 
@@ -39,6 +62,38 @@
     <script>
         document.getElementById('back-button').addEventListener('click', function() {
             window.location.href = 'index.html'; // pa volver al index xd
+        });
+    </script>
+    <script>
+        document.getElementById('solicitar').addEventListener('click', function(event) {
+            event.preventDefault();  
+    
+            // obtener datos
+            var tipoResiduo = document.getElementById('tipo-residuo').value;
+            var cantidad = document.getElementById('cantidad').value;
+            var comuna = document.getElementById('comuna').value;
+            var calle = document.getElementById('calle').value;
+            var fecha = document.getElementById('fecha').value;
+
+            var precioBase = 25000;
+            var cantidadMetros = parseFloat(cantidad);  // variables
+            var precio = 0;
+
+            if (cantidadMetros > 2) {
+                var cantidadExtra = Math.ceil(cantidadMetros - 2); 
+                precio = cantidadExtra * precioBase;  // Calcular
+            }
+    
+            // Guardar datos
+            localStorage.setItem('tipoResiduo', tipoResiduo);
+            localStorage.setItem('cantidad', cantidad);
+            localStorage.setItem('comuna', comuna);
+            localStorage.setItem('calle', calle);
+            localStorage.setItem('fecha', fecha);
+            localStorage.setItem('precio', precio);
+    
+            // ir a boleta
+            window.location.href = 'boleta.html';
         });
     </script>
 </body>

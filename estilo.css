@@ -1,8 +1,14 @@
 /* Estilo básico para todo el cuerpo */
 
+
 *, *::before, *::after {
     box-sizing: border-box;
 }
+
+
+
+/* ola */
+
 
 html, body {
     height: 100%;

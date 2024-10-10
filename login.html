@@ -2,20 +2,14 @@
 <html lang="es">
 
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Login - ONG Life & Sustainability</title>
-
     <link rel="stylesheet" href="estilo-registro.css">
-
 </head>
 
 <body>
     <div class="login-container">
-        
         <h2>Iniciar Sesión</h2>
         
         <form id="login-form">
@@ -34,26 +28,28 @@
             </select>
         
             <button type="submit">Ingresar</button>
+
+
         </form>
         
         <script>
             document.getElementById('login-form').addEventListener('submit', function(event) {
-                event.preventDefault(); // Esta lesera sirve pa controlar el login 
+                event.preventDefault(); // Evitar el envío del formulario
+
+                // Mostrar mensaje de éxito
+                alert('Inicio de sesión exitoso.');
 
                 const accountType = document.getElementById('account-type').value;
 
                 if (accountType === 'administrador') {
-                    window.location.href = 'admin.html'; // Esta te redirige a la vista del admin
+                    window.location.href = 'admin.html'; // Redirigir al admin
                 } else {
-                    window.location.href = 'index.html'; // Esto te manda pal index normal como usuario o empresa
+                    window.location.href = 'index.html'; // Redirigir a la página principal
                 }
             });
         </script>
         
         <p>¿No tienes una cuenta? <a href="Registro.html">Regístrate aquí</a></p>
-    
     </div>
-
 </body>
-
 </html>
