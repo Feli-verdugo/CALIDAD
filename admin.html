@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrador - ONG Life & Sustainability</title>
+    <link rel="stylesheet" href="estilo-admin.css">
+</head>
+
+<body>
+    <header>
+        <h1>Panel de Administrador</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="login.html">Cerrar Sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <h2>Solicitudes de Retiro de Residuos Pendientes</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Usuario</th>
+                    <th>Tipo de Residuos</th>
+                    <th>Peso (mt³)</th>
+                    <th>Domicilio</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+                    <th>Adicional</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Juan Pérez</td>
+                    <td>Plásticos</td>
+                    <td>1.5</td>
+                    <td>Los carreras 502</td>
+                    <td>Pendiente</td>
+                    <td>
+                        <button onclick="actualizarEstado(1)">Marcar como Completado</button>
+                    </td>
+
+                    <td>
+                        <button>Generar reporte</button>
+                    </td>
+
+                </tr>
+                <!-- aqui se pueden meter mas solicitudes de ejemplo -->
+
+                <tr>
+                    <td>2</td>
+                    <td>BilbaoLabs</td>
+                    <td>Electronicos</td>
+                    <td>3.5</td>
+                    <td>BilbaoHouse 502</td>
+                    <td>En proceso de recoleccion</td>
+                    <td>
+                        <button onclick="actualizarEstado(1)">Marcar como Completado</button>
+                    </td>
+
+                    <td>
+                        <button>Generar reporte</button>
+                    </td>
+
+                </tr>
+
+            </tbody>
+        </table>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 ONG Life & Sustainability Today. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        function actualizarEstado(id) {
+
+            // Aquí iría la lógica para actualizar el estado de la solicitud
+            alert(`Solicitud ${id} marcada como completada.`);
+           
+        }
+
+    </script>
+</body>
+</html>

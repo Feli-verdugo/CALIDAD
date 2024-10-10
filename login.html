@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login - ONG Life & Sustainability</title>
+
+    <link rel="stylesheet" href="estilo-registro.css">
+
+</head>
+
+<body>
+    <div class="login-container">
+        
+        <h2>Iniciar Sesión</h2>
+        
+        <form id="login-form">
+            <label for="username">Usuario:</label>
+            <input type="text" id="username" name="username" required>
+            
+            <label for="password">Contraseña:</label>
+            <input type="password" id="password" name="password" required>
+        
+            <label for="account-type">Tipo de Cuenta:</label>
+            <select id="account-type" name="account-type" required>
+                <option value="">Selecciona un tipo de cuenta</option>
+                <option value="empresa">Empresa</option>
+                <option value="usuario">Usuario Normal</option>
+                <option value="administrador">Administrador</option>
+            </select>
+        
+            <button type="submit">Ingresar</button>
+        </form>
+        
+        <script>
+            document.getElementById('login-form').addEventListener('submit', function(event) {
+                event.preventDefault(); // Esta lesera sirve pa controlar el login 
+
+                const accountType = document.getElementById('account-type').value;
+
+                if (accountType === 'administrador') {
+                    window.location.href = 'admin.html'; // Esta te redirige a la vista del admin
+                } else {
+                    window.location.href = 'index.html'; // Esto te manda pal index normal como usuario o empresa
+                }
+            });
+        </script>
+        
+        <p>¿No tienes una cuenta? <a href="Registro.html">Regístrate aquí</a></p>
+    
+    </div>
+
+</body>
+
+</html>
