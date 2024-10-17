@@ -27,8 +27,8 @@
    
             <ul>
                 <li><a href="{% url 'login' %}">Login</a></li>
-                <li><a href="Registro.html">Registrarse</a></li>
-                <li><a href="formulario-retiro.html">Solicitar Retiro de Residuos</a></li>
+                <li><a href="{% url 'registro' %}">Registrarse</a></li>
+                <li><a href="{% url 'formulario retiro' %}">Solicitar Retiro de Residuos</a></li>
    
             </ul>
    
@@ -42,8 +42,8 @@
             <h2>Protege el Medio Ambiente</h2>
             <p>Solicita el retiro de tus residuos urbanos y contribuye a un futuro sostenible.</p>
        
-            <a href="formulario-retiro.html" class="cta-button">Solicitar Retiro</a>
-            <a href="retiros-pendientes.html" class="cta-button secondary-button">Ver Retiros Pendientes</a>
+            <a href="{% url 'formulario retiro' %}" class="cta-button">Solicitar Retiro</a>
+            <a href="{% url 'retiros pendientes' %}" class="cta-button secondary-button">Ver Retiros Pendientes</a>
         </div>
         
     

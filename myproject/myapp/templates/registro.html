@@ -1,3 +1,6 @@
+{% load static %}
+
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -5,7 +8,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro - ONG Life & Sustainability</title>
-    <link rel="stylesheet" href="estilo-registro.css">
+    <link rel="stylesheet" href="{% static 'estilo-registro.css' %}">
 </head>
 
 <body>
@@ -41,11 +44,11 @@
                 alert('Registro exitoso. Ahora puedes iniciar sesión.');
                 
                 // Redirigir a la página de inicio de sesión
-                window.location.href = 'login.html'; // Cambia esto según tu diseño
+                window.location.href = "{% url 'login' %}"; // Cambia esto según tu diseño
             });
         </script>
         
-        <p>¿Ya tienes una cuenta? <a href="login.html">Inicia Sesión</a></p>
+        <p>¿Ya tienes una cuenta? <a href="{% url 'login' %}">Inicia Sesión</a></p>
     </div>
 
 </body>
